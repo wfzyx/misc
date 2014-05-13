@@ -17,15 +17,35 @@ grid = '''08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 04 42 16 73 38 25 39 11 24 94 72 18 08 46 29 32 40 62 76 36
 20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
-01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48'''
+01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48'''.split('\n')
 
-grid = grid.split('\n')
 grid = [x.split() for x in grid]
-from functools import reduce
 
-for i in range(len(grid)):
-    for j in range(len(grid)):
-        #right
-        x = grid[i][j:4]
-        print(x)
-        sys.exit()
+ngrid = []
+for x in grid:
+	aux = []
+	for y in x:
+		aux.append(int(y))
+	ngrid.append(aux)
+del(grid)
+
+from functools import reduce
+import operator
+
+results = []
+
+def lr():
+	for vet in ngrid:
+		for sli in [vet[i:i+4] for i in range(len(vet)) if len(vet[i:i+4]) == 4]:
+			results.append(reduce(operator.mul,sli))
+
+def ud():
+	zgrid = list(zip(ngrid))
+	for vet in zgrid:
+		for sli in [vet[i:i+4] for i in range(len(vet)) if len(vet[i:i+4]) == 4]:
+			results.append(reduce(operator.mul,sli))
+
+if __name__ == '__main__':
+	lr()
+	ud()
+	print(max(results))
