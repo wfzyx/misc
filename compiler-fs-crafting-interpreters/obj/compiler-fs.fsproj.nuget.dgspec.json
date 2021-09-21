@@ -1,0 +1,60 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/victor/Coding/random/compiler-fs/compiler-fs.fsproj": {}
+  },
+  "projects": {
+    "/home/victor/Coding/random/compiler-fs/compiler-fs.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/victor/Coding/random/compiler-fs/compiler-fs.fsproj",
+        "projectName": "compiler-fs",
+        "projectPath": "/home/victor/Coding/random/compiler-fs/compiler-fs.fsproj",
+        "packagesPath": "/home/victor/.nuget/packages/",
+        "outputPath": "/home/victor/Coding/random/compiler-fs/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/victor/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "FSharp.Core": {
+              "target": "Package",
+              "version": "[4.7.2, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.407/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

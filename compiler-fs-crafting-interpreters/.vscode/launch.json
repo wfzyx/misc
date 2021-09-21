@@ -1,0 +1,18 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+        {
+            "request": "launch",
+            "name": "Launch",
+            "type": "mono",
+            "program": "/home/victor/Coding/random/compiler-fs/bin/Debug/netcoreapp3.1/compiler-fs",
+        },
+        {
+            "name": "Attach",
+            "request": "attach",
+            "type": "mono",
+            "address": "localhost",
+            "port": 55555
+        }
+    ]
+}

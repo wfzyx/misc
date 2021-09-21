@@ -1,0 +1,8 @@
+/home/victor/Coding/random/compiler-fs/bin/Debug/netcoreapp3.1/compiler-fs
+/home/victor/Coding/random/compiler-fs/bin/Debug/netcoreapp3.1/compiler-fs.deps.json
+/home/victor/Coding/random/compiler-fs/bin/Debug/netcoreapp3.1/compiler-fs.runtimeconfig.json
+/home/victor/Coding/random/compiler-fs/bin/Debug/netcoreapp3.1/compiler-fs.runtimeconfig.dev.json
+/home/victor/Coding/random/compiler-fs/obj/Debug/netcoreapp3.1/compiler-fs.AssemblyInfoInputs.cache
+/home/victor/Coding/random/compiler-fs/obj/Debug/netcoreapp3.1/compiler-fs.AssemblyInfo.fs
+/home/victor/Coding/random/compiler-fs/obj/Debug/netcoreapp3.1/compiler-fs.genruntimeconfig.cache
+/home/victor/Coding/random/compiler-fs/obj/Debug/netcoreapp3.1/compiler-fs.fsproj.CoreCompileInputs.cache
