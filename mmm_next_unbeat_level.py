@@ -1,7 +1,8 @@
-# import win32gui, win32api
-from pynput.keyboard import Controller, Key
-import requests
 from bs4 import BeautifulSoup as Soup
+from pynput.keyboard import Controller, Key
+import os
+import requests
+import win32gui, win32api
 
 def get_level_ids():
     url = 'https://megamaker.webmeka.io/stream-nextLevelToBeat.php?USEID=160646'
@@ -10,7 +11,7 @@ def get_level_ids():
     ids = page.select("#level")
     ids = []
     for tag in page.find_all("td", "tc"):
-        if tag.a and len(ids) < 5:
+        if tag.a and len(ids) < 1:
             ids.append(tag.a.get("href").split(':')[-1][2:])
     return ids
 
@@ -27,10 +28,14 @@ def main():
         return
     game = dummy[0]
     win32gui.SetForegroundWindow(game.hwnd)
-    #open('', ')
     kb = Controller()
-    kb.write(ids)
+    kb.write(get_level_ids()[0])
+    kb.press(Key.enter)
+    kb.release(Key.enter)
 
 if __name__ == '__main__':
-    print(get_level_ids())
+    if os.path.exists("lock.db"):
+        return
+    open('lock.db', 'w').close()
     main()
+    os.remove("lock.db")
