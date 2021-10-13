@@ -19,7 +19,8 @@ let JSON-Value
 
 pi = 3.14
 
-fn fizzbuzz => str s
+fn fizzbuzz: num => str {
+
     int n
 
     mod3 = n % 3 == 0
@@ -31,8 +32,6 @@ fn fizzbuzz => str s
     | false true -> 'Buzz'
     | true true -> 'FizzBuzz'
     : raise Error()
-
-
 
     jvalue = JSON-String
 
@@ -46,5 +45,4 @@ fn fizzbuzz => str s
     | JSON-Boolean -> c
     : raise Error() -> d
 
-
-
+}
