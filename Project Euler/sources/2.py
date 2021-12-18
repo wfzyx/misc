@@ -8,9 +8,10 @@ def fib():
         y = z + x
         z = x + y
 
+
 s = fib()
 x = 0
 for n in s:
     x += n
-    
+
 print(x)
