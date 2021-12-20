@@ -7,7 +7,7 @@ import multiprocessing as mp
 
 def fetch_and_save(t):
     idx, link = t
-    print(f'Downloading smiler {id} please await')
+    print(f'Downloading smiler {idx} please await')
     with open(f"./smilers_folder/{idx}.png", "wb") as file:
         file.write(requests.get(link).content)
 
