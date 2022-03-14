@@ -1,0 +1,18 @@
+fizzbuzz: fn(n: num): str = {
+    ret match(n) {
+        as (x % 15 == 0) = "FizzBuzz";
+        as (x % 05 == 0) = "Buzz";
+        as (x % 03 == 0) = "Fizz";
+        default = n;
+    };
+};
+
+main: fn(): num = {
+
+    for(n: num in 0..100)
+    {
+        fizzbuzz(n);
+    };
+
+    ret 0;
+};

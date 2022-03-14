@@ -25,4 +25,4 @@ type Token = {
 }
 
 let ToString (token):string =
-    String.Format("<{0}> : \"{1}\" \"{2}\"", token.tokenType, token.lexeme, token.literal)
+    String.Format("{0,10} \t {1,10} \t {2,10}", token.tokenType, token.lexeme, token.literal)

@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "bJH9JRBItg5WkAJWuvaTN7jdi4o4vtNkZ1OssgDHFnRWLyWQ0+AFEu2USukZtwpbCRM2FPCruYvc04WfI6b6zQ==",
+  "dgSpecHash": "Jje7+8/OkAU5LQQVyhFG/92PzHqw06okAGitGSobSRORv95nhSDCBtBT+7yX0Cjf6U8E48TGEbo5PLt3hbpbCQ==",
   "success": true,
-  "projectFilePath": "/home/victor/Coding/random/compiler-fs/compiler-fs.fsproj",
+  "projectFilePath": "/home/victor/Coding/misc/prolang/compiler-fs-crafting-interpreters/compiler-fs.fsproj",
   "expectedPackageFiles": [
-    "/home/victor/.nuget/packages/fsharp.core/4.7.2/fsharp.core.4.7.2.nupkg.sha512"
+    "/home/victor/.nuget/packages/fsharp.core/6.0.1/fsharp.core.6.0.1.nupkg.sha512"
   ],
   "logs": []
 }

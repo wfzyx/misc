@@ -1,2 +1,5 @@
 *.so
-prolang/out/*
+prolang/out/**
+prolang/.antlr4/**
+prolang/compiler-fs-crafting-interpreters/bin/**
+prolang/compiler-fs-crafting-interpreters/obj/**

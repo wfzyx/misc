@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/victor/Coding/random/compiler-fs/compiler-fs.fsproj": {}
+    "/home/victor/Coding/misc/prolang/compiler-fs-crafting-interpreters/compiler-fs.fsproj": {}
   },
   "projects": {
-    "/home/victor/Coding/random/compiler-fs/compiler-fs.fsproj": {
+    "/home/victor/Coding/misc/prolang/compiler-fs-crafting-interpreters/compiler-fs.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/victor/Coding/random/compiler-fs/compiler-fs.fsproj",
+        "projectUniqueName": "/home/victor/Coding/misc/prolang/compiler-fs-crafting-interpreters/compiler-fs.fsproj",
         "projectName": "compiler-fs",
-        "projectPath": "/home/victor/Coding/random/compiler-fs/compiler-fs.fsproj",
+        "projectPath": "/home/victor/Coding/misc/prolang/compiler-fs-crafting-interpreters/compiler-fs.fsproj",
         "packagesPath": "/home/victor/.nuget/packages/",
-        "outputPath": "/home/victor/Coding/random/compiler-fs/obj/",
+        "outputPath": "/home/victor/Coding/misc/prolang/compiler-fs-crafting-interpreters/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/victor/.nuget/NuGet/NuGet.Config"
@@ -24,16 +24,19 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         }
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
-              "version": "[4.7.2, )",
+              "version": "[6.0.1, )",
               "generatePathProperty": true
             }
           },
@@ -52,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.407/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }

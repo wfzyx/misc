@@ -1,4 +1,4 @@
-// Generated from Mu.g4 by ANTLR 4.9
+// Generated from /home/victor/Coding/misc/prolang/Mu.g4 by ANTLR 4.8
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class MuParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.9", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -121,14 +121,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_unit; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterUnit(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitUnit(this);
-		}
 	}
 
 	public final UnitContext unit() throws RecognitionException {
@@ -204,14 +196,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_command; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterCommand(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitCommand(this);
-		}
 	}
 
 	public final CommandContext command() throws RecognitionException {
@@ -299,14 +283,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_assignables; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterAssignables(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitAssignables(this);
-		}
 	}
 
 	public final AssignablesContext assignables() throws RecognitionException {
@@ -372,14 +348,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_gen_attr; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterGen_attr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitGen_attr(this);
-		}
 	}
 
 	public final Gen_attrContext gen_attr() throws RecognitionException {
@@ -435,14 +403,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expr_block; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterExpr_block(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitExpr_block(this);
-		}
 	}
 
 	public final Expr_blockContext expr_block() throws RecognitionException {
@@ -515,14 +475,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_type; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterType(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitType(this);
-		}
 	}
 
 	public final TypeContext type() throws RecognitionException {
@@ -594,14 +546,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_fun_decl; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterFun_decl(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitFun_decl(this);
-		}
 	}
 
 	public final Fun_declContext fun_decl() throws RecognitionException {
@@ -676,14 +620,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_fun_call; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterFun_call(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitFun_call(this);
-		}
 	}
 
 	public final Fun_callContext fun_call() throws RecognitionException {
@@ -753,14 +689,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_for_loop; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterFor_loop(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitFor_loop(this);
-		}
 	}
 
 	public final For_loopContext for_loop() throws RecognitionException {
@@ -825,14 +753,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_match_cond; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterMatch_cond(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitMatch_cond(this);
-		}
 	}
 
 	public final Match_condContext match_cond() throws RecognitionException {
@@ -895,14 +815,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_match_branch; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterMatch_branch(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitMatch_branch(this);
-		}
 	}
 
 	public final Match_branchContext match_branch() throws RecognitionException {
@@ -965,14 +877,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_ret_call; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterRet_call(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitRet_call(this);
-		}
 	}
 
 	public final Ret_callContext ret_call() throws RecognitionException {
@@ -1015,14 +919,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expr; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterExpr(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitExpr(this);
-		}
 	}
 
 	public final ExprContext expr() throws RecognitionException {
@@ -1072,14 +968,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expr_atom; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterExpr_atom(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitExpr_atom(this);
-		}
 	}
 
 	public final Expr_atomContext expr_atom() throws RecognitionException {
@@ -1129,14 +1017,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_comp; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterComp(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitComp(this);
-		}
 	}
 
 	public final CompContext comp() throws RecognitionException {
@@ -1176,14 +1056,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_arith_op; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterArith_op(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitArith_op(this);
-		}
 	}
 
 	public final Arith_opContext arith_op() throws RecognitionException {
@@ -1228,14 +1100,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_compar_op; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterCompar_op(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitCompar_op(this);
-		}
 	}
 
 	public final Compar_opContext compar_op() throws RecognitionException {
@@ -1279,14 +1143,6 @@ public class MuParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_binary_op; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).enterBinary_op(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof MuListener ) ((MuListener)listener).exitBinary_op(this);
-		}
 	}
 
 	public final Binary_opContext binary_op() throws RecognitionException {

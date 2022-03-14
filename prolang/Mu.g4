@@ -1,50 +1,104 @@
 grammar Mu;
 
-unit        :   (cmd NL?)+ ;
-
-cmd         :   expr SC 
-            |   comp SC
-            |   attr SC
+unit        :   gen_attr+
+            |   EOF
             ;
 
-// select_expr :   QSMARK WS (comp | ID) ()
+command     :   ( expr | fun_call | for_loop | match_cond | ret_call ) SEMI | gen_attr;
 
-attr        :   ID ATTR expr ;
+assignables :   match_cond | fun_call | expr | expr_block;
 
-expr        :   expr_atom WS? BINARY_OP WS? expr
-            |   expr_atom 
+gen_attr    :   ID COLON type? OP_ASSING assignables SEMI ;
+
+expr_block  :   command
+            |   LKEY command+ RKEY
             ;
 
-comp        :   expr_atom COMPAR_OP expr_atom ;
+type        :   fun_decl | LBRACK TYPELIST RBRACK | TYPELIST;
 
-expr_atom   :   INT | FLOAT | ID;
+fun_decl    :   'fn'
+                LPAREN
+                ( ID COLON type (COMMA ID COLON type)? )?
+                RPAREN
+                COLON type
+                ;
 
-ID          :   [a-zA-Z_] [a-zA-Z_0-9]* ;
+fun_call    :   ID 
+                LPAREN
+                (ID (COMMA ID)?)?
+                RPAREN
+                ;
 
-FLOAT       :   [0-9]+ '.' [0-9]*
-            |   '.' [0-9]+
+for_loop    :   'for' LPAREN ID COLON type 'in' ( ID | RANGE_LIT ) RPAREN expr_block;
+
+match_cond      :   'match' LPAREN ID RPAREN LKEY match_branch+ RKEY;
+match_branch    :   'as' LPAREN ( comp ) RPAREN OP_ASSING command | 'default' OP_ASSING command;
+
+ret_call    :   'ret' assignables
             ;
 
-INT         :   [0-9]+ ;
+expr        :   lhs=expr_atom op=binary_op rhs=expr_atom
+            |   expr_atom
+            ;
 
-BINARY_OP   :   PLUS | MINUS | MULT | DIV | EXP | IDIV ;
-COMPAR_OP   :   EQ | NEQ | GT | LT | GEQ | LEQ ;
+expr_atom   :   STR_LIT | FLOAT_LIT | INT_LIT | ID ;
 
-PLUS        :   '+' ;
-MINUS       :   '-' ;
-MULT        :   '*' ; 
-DIV         :   '/' ;
-IDIV        :   '//' ;
-EXP         :   '**' ;
-ATTR        :   '=' ;
-EQ          :   '==' ;
-NEQ         :   '!=' ;
-GT          :   '>' ;
-LT          :   '<' ;
-GEQ         :   '>=' ;
-LEQ         :   '<=' ;
-WS          :   [\t ] -> skip ;
-NL          :   [\n] -> skip ;
-SC          :   ';' ; 
+comp        :   lhs=expr op=compar_op rhs=expr ;
+
+arith_op    :   OP_PLUS | OP_MINUS | OP_MULT | OP_DIV | OP_EXP | OP_IDIV | OP_MOD ;
+compar_op   :   OP_VALEQ | OP_REFEQ | OP_GT | OP_LT | OP_GEQ | OP_LEQ | OP_NEQ;
+binary_op   :   arith_op | compar_op ;
+
+CONST       :   'const' ;
+LET         :   'let'   ;
+
+OP_PLUS     :   '+' ;
+OP_MINUS    :   '-' ;
+OP_MULT     :   '*' ;
+OP_DIV      :   '/' ;
+OP_MOD      :   '%' ;
+OP_NEQ      :   '!=' ;
+OP_IDIV     :   '//' ;
+OP_EXP      :   '**' ;
+OP_ASSING   :   '=' ;
+OP_VALEQ    :   '==' ;
+OP_REFEQ    :   '===' ;
+OP_GT       :   '>' ;
+OP_LT       :   '<' ;
+OP_GEQ      :   '>=' ;
+OP_LEQ      :   '<=' ;
+
+IG          :   [\t\r\n] -> skip ;
+WS          :   ' ' -> skip;
+COLON       :   ':' ; 
+SEMI        :   ';' ; 
+COMMA       :   ',' ; 
 QSMARK      :   '?' ;
 PPMARK      :   '|' ;
+DOT         :   '.' ;
+LKEY        :   '{' ;
+RKEY        :   '}' ;
+LPAREN      :   '(' ;
+RPAREN      :   ')' ;
+LBRACK      :   '[' ;
+RBRACK      :   ']' ;
+DQUOT       :   '"' ;
+
+TYPELIST    :   'r64'
+            |   'r32'
+            |   'r16'
+            |   'r8'
+            |   'num'
+            |   'str'
+            ;
+
+STR_LIT     :   DQUOT .*? DQUOT ;
+
+FLOAT_LIT   :   [0-9]+ DOT [0-9]+
+            |   DOT [0-9]+
+            ;
+
+RANGE_LIT   :   INT_LIT '..' INT_LIT ;
+INT_LIT     :   [0-9]+ ;
+ID          :   [a-zA-Z_]+ ;
+COMMENT     :   OP_DIV OP_MULT .*? OP_MULT OP_DIV -> skip ;
