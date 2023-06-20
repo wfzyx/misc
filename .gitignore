@@ -4,3 +4,6 @@ prolang/.antlr4/
 prolang/compiler-fs-crafting-interpreters/bin/
 prolang/compiler-fs-crafting-interpreters/obj/
 marin_sutff/.idea/
+build/
+dist/
+*.spec
