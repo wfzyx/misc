@@ -94,12 +94,12 @@ def w_get_level_id(queue):
             with open('lvl_list.txt', 'w') as f:
                 f.write(url)
 
-def w_get_level_id_from_file(queue):    
+def w_get_level_id_from_file():    
     return (
         open('%localappdata%/megamaker/id/nextID.txt', 'r')
         .readlines()[0]
         .strip()
-    )
+    ) or ''
 
 def w_get_window_handle(queue):
     if os.path.exists('wh.db'):
@@ -129,7 +129,7 @@ def main():
     pWinWorker.start()
 
     qHttpData = multiprocessing.Queue()
-    pHttpWorker = multiprocessing.Process(target=w_get_level_id, args=(qHttpData,))
+    pHttpWorker = multiprocessing.Process(target=w_get_level_id_from_file)
     pHttpWorker.start()
 
     pWinWorker.join()
