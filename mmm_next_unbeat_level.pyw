@@ -1,3 +1,4 @@
+import contextlib
 from bs4 import BeautifulSoup as Soup
 from pynput.keyboard import Controller, Key
 from time import sleep
@@ -60,9 +61,9 @@ if sys.platform.startswith('win'):
 def w_get_level_id(queue):    
     try:
         url = open('lvl_list.txt', 'r').readlines()[0].strip()
-    except:
+    except Exception:
         url = 'https://megamaker.webmeka.io/stream-nextLevelToBeat.php?USEID=160646'
-        
+
     while True:
         response = requests.get(url=url, cookies={'WMSESS_':'rrq4m62eafl4vc3ofrjp3dcg55', 'mmmSession': 'eyJpc1Rva2VuVmFsaWQiOjEsImRhdGEiOnsiaWQiOjE2MDY0NiwiaWNvbiI6NDQsInVzZXJuYW1lIjoibWVnYSBtYXJpbm8ifSwiZGF0YVNlYyI6eyJpZCI6ImUyZjY4NjI0MGM4YzA0OWYwODJjNzVkN2UwZTBjMThkOTVkMDkxMTkiLCJpY29uIjoiYjk2NTczNGYyNDU1Y2E0MTc5NDA4ZjRkMjNmYjVhNDgwMjUxYWQwOCIsInVzZXJuYW1lIjoiY2FjOWJiYTFlZWU4YWM4MmE1OGY0YjgwMWVkODhmYjE0ZTQ1YjZkZSJ9fQ=='})
         page = Soup(response.text, features='html.parser')
@@ -71,7 +72,7 @@ def w_get_level_id(queue):
         if os.path.exists('skip.txt'):
             try:
                 skip = [s.strip() for s in open('skip.txt', 'r').readlines()]
-            except:
+            except Exception:
                 skip = []
         else:
             skip = []
@@ -89,11 +90,16 @@ def w_get_level_id(queue):
                     return
         next_page = int(url[url.find('=')+1:url.find('&')]) + 1
         url = url[:url.find('=')] + f'={next_page}' + url[url.find('&'):]
-        try:
+        with contextlib.suppress(Exception):
             with open('lvl_list.txt', 'w') as f:
                 f.write(url)
-        except:
-            pass
+
+def w_get_level_id_from_file(queue):    
+    return (
+        open('%localappdata%/megamaker/id/nextID.txt', 'r')
+        .readlines()[0]
+        .strip()
+    )
 
 def w_get_window_handle(queue):
     if os.path.exists('wh.db'):
@@ -133,7 +139,7 @@ def main():
         return
     try:
         win32gui.SetForegroundWindow(game_window_handle)
-    except:
+    except Exception:
         os.remove('wh.db')
         print('game handle was wrong')
         return
@@ -155,7 +161,7 @@ def main():
     kb.press(Key.enter)
     kb.release(Key.enter)
     sleep(0.1)
-    for i in range(30):
+    for _ in range(30):
         kb.press(Key.backspace)
         sleep(0.01)
         kb.release(Key.backspace)
@@ -168,10 +174,9 @@ def main():
     kb.press(Key.enter)
     kb.release(Key.enter)
 
+import contextlib
 if __name__ == '__main__':
     multiprocessing.freeze_support()
     main()
-    try:
+    with contextlib.suppress(Exception):
         os.remove('lock.db')
-    except:
-        pass
