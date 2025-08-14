@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@types/bun": "latest",
+    "cheerio": "^1.1.2"
+  }
+}
